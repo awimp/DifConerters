@@ -7,7 +7,6 @@ namespace ConsoleApp2
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            int i = 1;
             Console.ReadKey();
         }
     }
