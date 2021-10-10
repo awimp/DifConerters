@@ -1,73 +1,97 @@
-﻿using System;
+namespace DZ2
 
-namespace ConsoleApp2
+
 {
-	public abstract class Student
-	{
-		public string name;
-		public string state;
-		public void Name(string name_)
-		{
-			name = name_;
-		}
-		public string State() { }
-		public void Relax()
-		{
-			state += "Relax";
-		}
-		public void Read()
-		{
-			state += "Read";
-		}
-		public void Write()
-		{
-			state += "Write";
-		}
-		public abstract void Study();
-	}
-
-
-
-	class GoodStudent : Student
-	{
-		public string State()
+    public abstract class Student
+    {
+       
+        
+        public Student(string name)
         {
-			state+="good":
+            this.name = name;
+            this.state = "";
         }
-		public abstract void Study()
+
+        public void State() { }
+
+
+        public string getName()
         {
-			Read();
-			Write();
-			Read();
-			Write();
-			Relax();
-		}
-
-	}
-
-	class BadStudent : Student
-	{
-		public string State()
-		{
-			state += "bad":
+            return name;
         }
-		public abstract void Study()
-		{
-			Relax();
-			Relax();
-			Relax();
-			Relax();
-			Read();
-		}
-	}
 
-	class Program
-	{
-		static void Main(string[] args)
-		{
-
-		}
-	}
+        public string getState()
+        {
+            return state;
+        }
 
 
+        public void Relax()
+        {
+            state += " Relax";
+        }
+
+        public void Write()
+        {
+            state += " Write";
+        }
+
+        public void Read()
+        {
+            state += " Read";
+        }
+                
+
+        protected string name;
+
+        protected string state;
+
+        public abstract void Study();
+
+    }
+
+
+    public class GoodStudent : Student
+    {
+        public GoodStudent(string name) : base(name)
+
+        {
+            state += " good";
+        }
+
+        public override void Study()
+
+        {
+            Read();
+            Write();
+            Read();
+            Write();
+            Relax();
+
+        }
+    }
+
+
+    public class BadStudent : Student
+    {
+        public BadStudent(string name) : base(name)
+
+        {
+            state += " bad";
+        }
+
+        public override void Study()
+
+        {
+
+            Relax();
+            Relax();
+            Relax();
+            Relax();
+            Read();
+
+        }
+    }
+
+    
 }
