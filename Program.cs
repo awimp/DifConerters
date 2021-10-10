@@ -1,13 +1,22 @@
-﻿using System;
-
-namespace ConsoleApp2
+﻿namespace Task3
 {
-    class Program
+
+    internal class ProgramTask3
     {
-        static void Main(string[] args)
+        // public static void Main()
+        // {
+        //      testingClassConverter.testingFunctionConverter();
+        //  }
+    }
+}
+namespace DZ2
+{
+    internal class Program
+    {
+        public const string PathToFile = "C:/Users/SkladannaEM/source/repos/DZ2/Students.txt";
+        public static void Main()
         {
-            Console.WriteLine("Hello World!");
-            Console.ReadKey();
+            testingClassStudents.testingFunctionStudents();
         }
     }
 }
