@@ -1,43 +1,43 @@
-﻿/*using System;
-namespace DZ
+﻿namespace DZ
 {
-    public class testingClassConverter
+    class Converter
+
     {
-        static public void testingFunctionConverter()
+        public double DollarToGrivna = 26.32;
+
+        public double EuroToGrivna = 30.46;
+
+
+
+        public double CToDollars(double grivnas)
         {
-            {
-
-                Console.WriteLine("START TESTING CONVERTER");
-                double R_ollar, R_uros;
-
-
-                Console.WriteLine("Please enter the dollar exchange rate in Ukraine");
-                R_ollar = Convert.ToDouble(Console.ReadLine());
-
-                Console.WriteLine("Please enter the euros exchange rate in Ukraine");
-                R_uros = Convert.ToDouble(Console.ReadLine());
-
-                var converter = new Converter(R_ollar, R_uros);
-
-                Console.WriteLine("Please, enter the number you want convert to dollars or euros");
-                double grivnas = Convert.ToDouble(Console.ReadLine());
-
-
-                Console.WriteLine("Now, please, enter 'd' symbol to convert " + grivnas + " to dollars " +
-                                  "and 'e' symbol to convert " + grivnas + " to euros:)");
-
-                char operation = Convert.ToChar(Console.ReadLine());
-                double result;
-                if (operation == 'd')
-                {
-                    Console.WriteLine(grivnas + " grivnas is " + converter.ConvertToDollars(grivnas) + " dollars:)");
-                }
-
-                else if (operation == 'e')
-                {
-                    Console.WriteLine(grivnas + " grivnas is " + converter.ConvertToEuros(grivnas) + " euros:)");
-                }
-            }
+            if (grivnas == 0) return 0.0;
+            return grivnas / DollarToGrivna;
         }
+
+
+        public double CDollars(double dollars)
+        {
+            if (dollars == 0) return 0.0;
+            return dollars * DollarToGrivna;
+        }
+
+
+
+        public double CToEuros(double grivnas)
+        {
+            if (grivnas == 0) return 0.0;
+            return grivnas / EuroToGrivna;
+        }
+
+
+        public double CEuros(double euros)
+        {
+            if (euros == 0) return 0.0;
+            return euros * EuroToGrivna;
+        }
+
+        
+        
     }
-}*/
+}
